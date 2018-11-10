@@ -17,6 +17,7 @@ before_script:
   
 script: 
   # - phpcbf -v --standard=PSR2 app/Http/Controllers
+  - find  app/Http/Controllers/ -type f -name '*.php' -exec php -l {} \; | (! grep -v "No syntax errors detected" )
   - npm run production
  
 cache:
