@@ -16,6 +16,6 @@ before_script:
   - npm install
   
 script: 
-  - phpcbf -p -vv app/Http/Controllers
+  - phpcbf -v --standard=PSR2 app/Http/Controllers
   - npm run production
  
