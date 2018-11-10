@@ -10,7 +10,6 @@ before_script:
   - phpenv rehash
   - nvm install --lts
   - npm install npm@latest -g
-  - npm install -g jshint
   - cd src  
   - cp .env.example .env
   - composer install --no-interaction
@@ -20,4 +19,4 @@ script:
   - vendor/bin/phpunit --coverage-text
   - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php app/Http/Controllers
   - npm run production
-  - jshint resources/js/*
+ 
