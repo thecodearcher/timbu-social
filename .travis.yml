@@ -16,6 +16,6 @@ before_script:
   - npm install
   
 script: 
-  - phpcs --ignore=app/Http/Controllers/Auth,app/Http/Controllers/Controller.php app/Http/Controllers
+  - phpcbf app/Http/Controllers
   - npm run production
  
