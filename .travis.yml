@@ -6,8 +6,8 @@ php:
 
 before_script:
   - composer self-update
-  - pear install pear/PHP_CodeSniffer
-  - phpenv rehash
+  # - pear install pear/PHP_CodeSniffer
+  # - phpenv rehash
   - nvm install --lts
   - npm install npm@latest -g
   - cd src  
@@ -16,6 +16,10 @@ before_script:
   - npm install
   
 script: 
-  - phpcbf -v --standard=PSR2 app/Http/Controllers
+  # - phpcbf -v --standard=PSR2 app/Http/Controllers
   - npm run production
  
+cache:
+  directories:
+    - node_modules
+    - vendor
