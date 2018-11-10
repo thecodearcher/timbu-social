@@ -6,6 +6,7 @@ php:
 
 before_script:
   - composer self-update
+  - cd src  
   - composer install --no-interaction
 
 script:
