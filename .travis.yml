@@ -13,18 +13,18 @@ before_script:
   - cd src  
   - cp .env.example .env
   - composer install --no-interaction
-  - npm install
+  # - npm install
   
 script: 
   # - phpcbf -v --standard=PSR2 app/Http/Controllers
   - find  app/Http/Controllers/ -type f -name '*.php' -exec php -l {} \; | (! grep -v "No syntax errors detected" )
-  - npm run production
+  # - npm run production
  
 cache:
   directories:
     - node_modules
     - vendor
-    
+
 deploy:
   provider: script
   script: bash scripts/deploy.sh
