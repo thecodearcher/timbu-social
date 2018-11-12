@@ -24,3 +24,9 @@ cache:
   directories:
     - node_modules
     - vendor
+
+deploy:
+  provider: script
+  script: bash scripts/deploy.sh
+  on:
+    branch: production
