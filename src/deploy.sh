@@ -1,16 +1,18 @@
 #!/bin/sh
-# activate maintenance mode
-php artisan down
 
-# update source code
-#git pull
+# activate maintenance mode
+# php artisan down
+
+# get private key and add too ssh client
 echo $PRIVATE_KEY > private_key_file.txt
 cat private_key_file.txt | base64 --decode > private_key
-
 chmod 600 private_key
 eval `ssh-agent -s`
 ssh-agent $(ssh-add private_key; git pull origin master)
-ssh root@social.timbu.com -v
+
+#git pull
+
+# ssh root@social.timbu.com -v
 ls
 
 # update PHP dependencies
