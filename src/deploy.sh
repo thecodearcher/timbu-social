@@ -4,10 +4,12 @@ php artisan down
 
 # update source code
 #git pull
-echo -e $PRIVATE_KEY > ~/.ssh/id_rsa
-chmod 600 ~/.ssh/id_rsa
+cat $PRIVATE_KEY | base64 --decode > ~/.ssh/private_key
+
+chmod 600 ~/.ssh/private_key
 eval `ssh-agent -s`
-ssh-agent $(ssh-add ~/.ssh/id_rsa; git pull origin master)
+ssh-agent $(ssh-add ~/.ssh/private_key; git pull origin master)
+ssh root@social.timbu.com -v
 ls
 
 # update PHP dependencies
