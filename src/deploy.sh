@@ -4,11 +4,12 @@ php artisan down
 
 # update source code
 #git pull
-cat $PRIVATE_KEY | base64 --decode > ~/.ssh/private_key
+echo $PRIVATE_KEY > private_key_file.txt
+cat private_key_file.txt | base64 --decode > private_key
 
-chmod 600 ~/.ssh/private_key
+chmod 600 private_key
 eval `ssh-agent -s`
-ssh-agent $(ssh-add ~/.ssh/private_key; git pull origin master)
+ssh-agent $(ssh-add private_key; git pull origin master)
 ssh root@social.timbu.com -v
 ls
 
