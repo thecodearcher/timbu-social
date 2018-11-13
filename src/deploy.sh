@@ -10,7 +10,7 @@ ssh-agent $(ssh-add ~/.ssh/id_rsa; git pull origin master)
 
 # update PHP dependencies
 export COMPOSER_HOME='/tmp/composer'
-cd src
+
 composer install --no-interaction
 	# --no-interaction	Do not ask any interactive question
 	# --no-dev		Disables installation of require-dev packages.
