@@ -4,6 +4,8 @@ php artisan down
 
 # update source code
 #git pull
+echo -e $PRIVATE_KEY > ~/.ssh/id_rsa
+chmod 600 ~/.ssh/id_rsa
 eval `ssh-agent -s`
 ssh-agent $(ssh-add ~/.ssh/id_rsa; git pull origin master)
 ls
