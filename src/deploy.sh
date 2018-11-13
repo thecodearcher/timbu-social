@@ -8,9 +8,9 @@ chmod 600 private_key
 eval `ssh-agent -s`
 ssh-agent $(ssh-add private_key);
 #ssh to server and run commands
-ssh root@social.timbu.com <<EOF
+ssh $SSH_PATH <<EOF
     git pull origin master
-    cd src
+    cd $DEPLOY_DIR
 
     # activate maintenance mode
     php artisan down
