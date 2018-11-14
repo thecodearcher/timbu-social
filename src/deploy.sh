@@ -14,7 +14,7 @@ ssh $SSH_PATH <<EOF
     git pull origin master
 
     #cd into container
-    docker exec -t web bash
+    docker exec -i web bash
 
     # activate maintenance mode
     php artisan down
