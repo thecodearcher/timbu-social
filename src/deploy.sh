@@ -21,15 +21,9 @@ ssh $SSH_PATH <<EOF
 
     # Clear caches
     php artisan cache:clear
-
-
-    # Clear and cache routes
-    php artisan route:clear
-    php artisan route:cache
-
-    # Clear and cache config
     php artisan config:clear
-    php artisan config:cache
+    php artisan route:clear
+    php artisan view:clear
 
     # Install node modules
     npm install
