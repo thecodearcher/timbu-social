@@ -9,8 +9,12 @@ eval `ssh-agent -s`
 ssh-agent $(ssh-add private_key);
 #ssh to server and run commands
 ssh $SSH_PATH <<EOF
-    git pull origin master
     cd $DEPLOY_DIR
+
+    git pull origin master
+
+    #cd into container
+    docker exec -it web bash
 
     # activate maintenance mode
     php artisan down
