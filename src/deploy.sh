@@ -15,7 +15,7 @@ ssh $SSH_PATH <<EOF
     # activate maintenance mode
     php artisan down
 
-    composer install --no-interaction --no-dev
+    composer install --no-interaction
 	# --no-interaction	Do not ask any interactive question
 	# --no-dev		Disables installation of require-dev packages.
 

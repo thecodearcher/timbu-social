@@ -10,7 +10,7 @@ services:
         build: ./src
         container_name: web
         ports:
-            - 8000:80
+            - 80:80
         volumes:
             - ./src:/var/www
             - ./storage/app:/var/www/storage/app
